@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.openliberty.arquillian</groupId>
+	<artifactId>arquillian-liberty-dependencies</artifactId>
+	<version>1.0.0.Final-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Arquillian Liberty Dependency Bundles</name>
+	
+	<dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.jboss.arquillian</groupId>
+                <artifactId>arquillian-bom</artifactId>
+                <version>1.2.0.Final</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+    
+    <properties>
+        <liberty.managed.version>1.0.0.Final-SNAPSHOT</liberty.managed.version>
+        <liberty.remote.version>1.0.0.Beta2</liberty.remote.version>
+        <junit.version>4.12</junit.version>
+        <testng.version>6.9.10</testng.version>
+    </properties>
+
+	<modules>
+		<module>arquillian-liberty-managed-junit</module>
+		<module>arquillian-liberty-managed-testng</module>
+		<module>arquillian-liberty-remote-junit</module>
+        <module>arquillian-liberty-remote-testng</module>
+	</modules>
+
+</project>
