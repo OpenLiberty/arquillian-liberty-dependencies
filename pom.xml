@@ -7,31 +7,73 @@
 	<version>1.0.0.Final-SNAPSHOT</version>
 	<packaging>pom</packaging>
 	<name>Arquillian Liberty Dependency Bundles</name>
-	
+
 	<dependencyManagement>
-        <dependencies>
-            <dependency>
-                <groupId>org.jboss.arquillian</groupId>
-                <artifactId>arquillian-bom</artifactId>
-                <version>1.2.0.Final</version>
-                <scope>import</scope>
-                <type>pom</type>
-            </dependency>
-        </dependencies>
-    </dependencyManagement>
-    
-    <properties>
-        <liberty.managed.version>1.0.0.Final-SNAPSHOT</liberty.managed.version>
-        <liberty.remote.version>1.0.0.Beta2</liberty.remote.version>
-        <junit.version>4.12</junit.version>
-        <testng.version>6.9.10</testng.version>
-    </properties>
+		<dependencies>
+			<dependency>
+				<groupId>org.jboss.arquillian</groupId>
+				<artifactId>arquillian-bom</artifactId>
+				<version>1.2.0.Final</version>
+				<scope>import</scope>
+				<type>pom</type>
+			</dependency>
+		</dependencies>
+	</dependencyManagement>
+
+	<properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+	
+		<liberty.managed.version>1.0.0.Final-SNAPSHOT</liberty.managed.version>
+		<liberty.remote.version>1.0.0.Beta2</liberty.remote.version>
+		<junit.version>4.12</junit.version>
+		<testng.version>6.9.10</testng.version>
+	</properties>
 
 	<modules>
 		<module>arquillian-liberty-managed-junit</module>
 		<module>arquillian-liberty-managed-testng</module>
 		<module>arquillian-liberty-remote-junit</module>
-        <module>arquillian-liberty-remote-testng</module>
+		<module>arquillian-liberty-remote-testng</module>
 	</modules>
+
+	<profiles>
+		<profile>
+			<id>it</id>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-invoker-plugin</artifactId>
+						<version>3.0.1</version>
+						<configuration>
+							<debug>false</debug>
+							<goals>
+								<goal>install</goal>
+							</goals>
+							<projectsDirectory>it</projectsDirectory>
+							<properties>
+                                <arquillian.liberty.dependencies.version>${project.version}</arquillian.liberty.dependencies.version>
+                            </properties>
+							<cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
+							<profiles>
+								<profile>it</profile>
+							</profiles>
+							<streamLogs>true</streamLogs>
+						</configuration>
+						<executions>
+							<execution>
+								<id>integration-test</id>
+								<goals>
+									<goal>install</goal>
+									<goal>run</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
 
 </project>
