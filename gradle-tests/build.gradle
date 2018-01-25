@@ -5,6 +5,7 @@ buildscript {
     }
     dependencies {
         classpath group: 'net.wasdev.wlp.gradle.plugins', name: 'liberty-gradle-plugin', version: '2.1.1-SNAPSHOT'
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
     }
 }
 
@@ -12,6 +13,8 @@ apply plugin: 'war'
 
 apply plugin: 'java'
 apply plugin: 'liberty'
+
+apply plugin: "io.spring.dependency-management"
 
 sourceCompatibility = 1.8
 targetCompatibility = 1.8
@@ -56,6 +59,12 @@ configurations {
     compile.extendsFrom(h2)
 }
 
+dependencyManagement {
+    imports {
+        mavenBom "org.jboss.arquillian:arquillian-bom:1.1.13.Final"
+    }
+}
+
 dependencies {
     h2 "com.h2database:h2:1.4.195"
 
@@ -65,7 +74,7 @@ dependencies {
     providedCompile ('com.ibm.websphere.appserver.api:com.ibm.websphere.appserver.api.jaxrs20:1.0.18')
     providedCompile ('com.ibm.websphere.appserver.api:com.ibm.websphere.appserver.api.persistence:1.0.18')
     providedCompile ('org.eclipse.persistence:javax.persistence:2.1.0')
-    
+   
     testCompile "io.openliberty.arquillian:arquillian-liberty-managed-junit:1.0.0.Final-SNAPSHOT"
     testCompile "net.wasdev.wlp.common:ci.common:1.0-SNAPSHOT"
     testCompile files("${System.properties['java.home']}/../lib/tools.jar")

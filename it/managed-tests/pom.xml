@@ -53,8 +53,8 @@
 			<url>http://liberty-starter.wasdev.developer.ibm.com/start/api/v1/repo</url>
 		</repository>
 	</repositories>
-
-	<dependencyManagement>
+    
+    <dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.jboss.arquillian</groupId>
@@ -65,8 +65,8 @@
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-
-	<dependencies>
+    
+    <dependencies>
 		<dependency>
 			<groupId>io.openliberty.arquillian</groupId>
 			<artifactId>${arquillian.dependency.artifact}</artifactId>
