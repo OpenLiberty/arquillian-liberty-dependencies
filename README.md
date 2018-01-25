@@ -45,6 +45,8 @@ In order to prevent dependency conflicts, you'll need to use the `arquillian-bom
 </dependencies>
 ```
 
+You can use the command `mvn dependency:list` to view transitive dependencies and their versions.
+
 A complete Maven example, used as an integration test for this repository, is available in the `it/managed-tests` folder. 
 
 ### Gradle
@@ -85,7 +87,6 @@ dependencyManagement {
 }
 ```
 
+You can use the command `gradle dependencies` to view transitive dependencies and their versions. 
+
 The previous example uses version `1.1.13.Final` of the `arquillian-bom`. A full Gradle example is available in the `gradle-tests` folder. 
-
-### 
-
