@@ -1,1 +1,0 @@
-# arquillian-liberty-dependencies
