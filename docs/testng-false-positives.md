@@ -30,7 +30,7 @@ java.lang.NoClassDefFoundError: org/testng/IHookable
 
 However, all tests will be shown as passing, despite not being executed.
 
-#### Resolutiion
+#### Resolution
 
 As indicated by the error message shown above, the problem is that the TestNG JAR is not being added to the test container. The solution is to manually add the TestNG JAR to your archive when creating the deployment.
 
