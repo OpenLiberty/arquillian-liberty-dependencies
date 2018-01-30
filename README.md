@@ -13,6 +13,8 @@ In this repository, you'll find 4 artifacts that you can use in your Maven and G
 
 ## Usage
 
+**Notice:** There is currently a known issue with false positives test results when using certain versions of Arquillian with TestNG. [Here](docs/testng-false-positives.md) is more information about the issue, and a fix. 
+
 ### Maven
 
 In order to prevent dependency conflicts, you'll need to use the `arquillian-bom` in conjunction with a dependency bundle. While the `arquillian-liberty-dependencies` parent POM already contains the `arquillian-bom`, this is used only to build the dependency bundle artifacts and will not be applied to your project when you include them. The version of the `arquillian-bom` that you specify will apply to transitive dependencies of your project. 
