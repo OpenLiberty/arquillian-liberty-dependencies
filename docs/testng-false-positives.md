@@ -1,6 +1,6 @@
 ### False positive test results in certain versions of TestNG with Arquillian
 
-When using certain versions of Arquillian and TestNG, it is possible to experience an issue where tests results display as passing without actually being executed. This has been verified for the following version combinations of Arquillian and TestNG, but may be present in other version combinations as well.
+When using certain versions of Arquillian and TestNG, it is possible to experience an issue where test results display as passing without actually being executed. This has been verified for the following version combinations of Arquillian and TestNG, but may be present in other version combinations as well.
 
 - TestNG `6.13.1` and Arquillian `1.1.15.Final`
 - TestNG `6.13.1` and Arquillian `1.2.0.Final`
@@ -9,7 +9,7 @@ More information about this issue can be found [here](https://github.com/cbeust/
 
 #### Identification
 
-This problem can be easily identified by a `java.lang.NoClassDefFoundError on a TestNG class when running the tests. For example:
+This problem can be easily identified by a `java.lang.NoClassDefFoundError` on a TestNG class when running the tests. For example:
 
 ```
 [ERROR   ] SRVE0777E: Exception thrown by application class 'java.lang.ClassLoader.defineClass1:-2'
