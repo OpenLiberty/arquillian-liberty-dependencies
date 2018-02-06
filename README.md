@@ -6,14 +6,14 @@ The Liberty dependency bundles for Arquillian make it easy for you to manage ver
 
 In this repository, you'll find 4 artifacts that you can use in your Maven and Gradle projects. They are:
 
-- `io.openliberty.arquillian:arquillian-liberty-managed-junit`, for using the Arquillian Liberty Managed container with JUnit
-- `io.openliberty.arquillian:arquillian-liberty-managed-testng`, for using the Arquillian Liberty Managed container with TestNG
-- `io.openliberty.arquillian:arquillian-liberty-remote-junit`, for using the Arquillian Liberty Remote container with JUnit
-- `io.openliberty.arquillian:arquillian-liberty-remote-testng`, for using the Arquillian Liberty Remote container with TestNG
+- `io.openliberty.arquillian:arquillian-liberty-managed-junit` for using the Arquillian Liberty Managed container with JUnit
+- `io.openliberty.arquillian:arquillian-liberty-managed-testng` for using the Arquillian Liberty Managed container with TestNG
+- `io.openliberty.arquillian:arquillian-liberty-remote-junit` for using the Arquillian Liberty Remote container with JUnit
+- `io.openliberty.arquillian:arquillian-liberty-remote-testng` for using the Arquillian Liberty Remote container with TestNG
 
 ## Usage
 
-**Notice:** There is currently a known issue with false positives test results when using certain versions of Arquillian with TestNG. [Here](docs/testng-false-positives.md) is more information about the issue, and a fix. 
+**Notice:** There is currently a known issue with false positives test results when using certain versions of Arquillian with TestNG. [Here](docs/testng-false-positives.md) is more information about the issue and a fix. 
 
 ### Maven
 
@@ -63,13 +63,13 @@ Step 1: Add the plugin as a buildscript dependency:
 
 ```
 buildscript {
-	...
-	dependencies {
-		...
-		classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
-		...
-	}
-	...
+    ...
+    dependencies {
+        ...
+        classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
+        ...
+    }
+    ...
 }
 ```
 
