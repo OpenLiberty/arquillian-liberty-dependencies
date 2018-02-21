@@ -1,4 +1,4 @@
-# Arquillian Liberty Dependencies
+# Arquillian Liberty Dependencies [![Build Status](https://travis-ci.org/WASdev/arquillian-liberty-dependencies.svg?branch=master)](https://travis-ci.org/WASdev/arquillian-liberty-dependencies) [![Build status](https://ci.appveyor.com/api/projects/status/syrn0ekwwh78vb57/branch/master?svg=true)](https://ci.appveyor.com/project/wasdevb1/arquillian-liberty-dependencies/branch/master)
 
 The Liberty dependency bundles for Arquillian make it easy for you to manage versions for your Arquillian installation, the Arquillian Liberty Managed and Remote containers, and JUnit and TestNG libraries. 
 
