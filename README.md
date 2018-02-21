@@ -1,3 +1,4 @@
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/5253094cb041469e8bbd766e292fb6d5)](https://app.codacy.com/app/wasdevb1/arquillian-liberty-dependencies?utm_source=github.com&utm_medium=referral&utm_content=WASdev/arquillian-liberty-dependencies&utm_campaign=badger)
 # Arquillian Liberty Dependencies [![Build Status](https://travis-ci.org/WASdev/arquillian-liberty-dependencies.svg?branch=master)](https://travis-ci.org/WASdev/arquillian-liberty-dependencies) [![Build status](https://ci.appveyor.com/api/projects/status/syrn0ekwwh78vb57/branch/master?svg=true)](https://ci.appveyor.com/project/wasdevb1/arquillian-liberty-dependencies/branch/master) [![Codacy
 Badge](https://api.codacy.com/project/badge/Grade/12d14e910ecf4cdaa341f348e39c4182)](https://www.codacy.com/app/wasdevb1/arquillian-liberty-dependencies?utm_source=github.com&amp;utm_medium=referral&amp;utm_content=WASdev/arquillian-liberty-dependencies&amp;utm_campaign=Badge_Grade)
 
