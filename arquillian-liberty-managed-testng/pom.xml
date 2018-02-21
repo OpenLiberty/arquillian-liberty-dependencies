@@ -14,7 +14,7 @@
 	<dependencies>
 		<dependency>
 			<groupId>org.jboss.arquillian.container</groupId>
-			<artifactId>arquillian-liberty-managed</artifactId>
+			<artifactId>${liberty.managed.artifactId}</artifactId>
 			<version>${liberty.managed.version}</version>
 		</dependency>
 		<dependency>

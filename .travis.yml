@@ -1,0 +1,11 @@
+language: java
+
+jdk:
+    - openjdk8
+
+env:
+    - TEST_COMMAND="gradle clean build -i -s"
+    - TEST_COMMAND="mvn verify -Pit"
+
+script:
+- (eval "$TEST_COMMAND")

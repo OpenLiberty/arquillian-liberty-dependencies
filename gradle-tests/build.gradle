@@ -51,6 +51,8 @@ liberty {
         looseApplication = true
         verifyAppStartTimeout = 30
      }
+     
+     
 }
 
 configurations {
@@ -76,10 +78,9 @@ dependencies {
     providedCompile ('org.eclipse.persistence:javax.persistence:2.1.0')
    
     testCompile "io.openliberty.arquillian:arquillian-liberty-managed-junit:1.0.0.Final-SNAPSHOT"
-    testCompile "net.wasdev.wlp.common:ci.common:1.0-SNAPSHOT"
     testCompile files("${System.properties['java.home']}/../lib/tools.jar")
 
-    libertyRuntime "com.ibm.websphere.appserver.runtime:wlp-webProfile7:17.0.0.2"
+    libertyRuntime "com.ibm.websphere.appserver.runtime:wlp-webProfile7:17.0.0.4"
 }
 
 task copyH2 {
@@ -94,6 +95,10 @@ task copyH2 {
 
 libertyCreate.finalizedBy 'copyH2'
 
+configureArquillian {
+    arquillianProperties = ['outputToConsole': 'true', 'verifyApps': 'gradle-tests']
+}
+
 tasks.withType(Test) {
     group 'Verification'
     testLogging.showStandardStreams = true
@@ -101,4 +106,5 @@ tasks.withType(Test) {
     reports.html.destination = file("$buildDir/reports/")
     reports.junitXml.destination = file("$buildDir/test-results/")
     include '**/*'
+    dependsOn 'installApps', 'testClasses', 'configureArquillian'
 } 

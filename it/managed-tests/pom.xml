@@ -43,8 +43,8 @@
 		<package.file>${project.build.directory}/${app.name}.zip</package.file>
 		<packaging.type>usr</packaging.type>
 
-<!-- 		<arquillian.liberty.dependencies.version>1.0.0.Final-SNAPSHOT</arquillian.liberty.dependencies.version>
- -->	</properties>
+		<!-- <arquillian.liberty.dependencies.version>1.0.0.Final-SNAPSHOT</arquillian.liberty.dependencies.version> -->
+	</properties>
 
 	<repositories>
 		<repository>
@@ -53,25 +53,35 @@
 			<url>http://liberty-starter.wasdev.developer.ibm.com/start/api/v1/repo</url>
 		</repository>
 	</repositories>
-    
-    <dependencyManagement>
+
+	<dependencyManagement>
 		<dependencies>
 			<dependency>
 				<groupId>org.jboss.arquillian</groupId>
 				<artifactId>arquillian-bom</artifactId>
-				<version>1.1.13.Final</version>
+				<version>1.2.0.Final</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
-    
-    <dependencies>
+
+	<dependencies>
 		<dependency>
 			<groupId>io.openliberty.arquillian</groupId>
 			<artifactId>${arquillian.dependency.artifact}</artifactId>
 			<version>${arquillian.liberty.dependencies.version}</version>
 			<type>pom</type>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.shrinkwrap.resolver</groupId>
+			<artifactId>shrinkwrap-resolver-impl-maven</artifactId>
+			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.shrinkwrap</groupId>
+			<artifactId>shrinkwrap-api</artifactId>
 			<scope>test</scope>
 		</dependency>
 		<dependency>
@@ -183,11 +193,11 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
 				<groupId>net.wasdev.wlp.maven.plugins</groupId>
 				<artifactId>liberty-maven-plugin</artifactId>
-				<version>2.1.2-SNAPSHOT</version>
+				<version>2.2-SNAPSHOT</version>
 				<extensions>true</extensions>
 				<!-- Specify configuration, executions for liberty-maven-plugin -->
 				<configuration>
@@ -229,38 +239,38 @@
 					</execution>
 				</executions>
 			</plugin>
-			
+
 			<plugin>
-                <groupId>org.apache.maven.plugins</groupId>
-                <artifactId>maven-antrun-plugin</artifactId>
-                <version>1.8</version>
-                <dependencies>
-                    <dependency>
-                        <groupId>com.sun</groupId>
-                        <artifactId>tools</artifactId>
-                        <version>1.5.0</version>
-                        <scope>system</scope>
-                        <systemPath>${java.home}/../lib/tools.jar</systemPath>
-                    </dependency>
-                </dependencies>
-                <executions>
-                    <execution>
-                        <id>compile-and-copy-test-classes</id>
-                        <phase>process-test-resources</phase>
-                        <configuration>
-                            <target>
-                                <javac srcdir="${project.basedir}/src/test-profile-resources"
-                                    destdir="${project.build.directory}/test-classes" includes="${test.to.include}"
-                                    classpathref="maven.test.classpath" />
-                            </target>
-                        </configuration>
-                        <goals>
-                            <goal>run</goal>
-                        </goals>
-                    </execution>
-                </executions>
-            </plugin>
-			
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-antrun-plugin</artifactId>
+				<version>1.8</version>
+				<dependencies>
+					<dependency>
+						<groupId>com.sun</groupId>
+						<artifactId>tools</artifactId>
+						<version>1.5.0</version>
+						<scope>system</scope>
+						<systemPath>${java.home}/../lib/tools.jar</systemPath>
+					</dependency>
+				</dependencies>
+				<executions>
+					<execution>
+						<id>compile-and-copy-test-classes</id>
+						<phase>process-test-resources</phase>
+						<configuration>
+							<target>
+								<javac srcdir="${project.basedir}/src/test-profile-resources"
+									destdir="${project.build.directory}/test-classes" includes="${test.to.include}"
+									classpathref="maven.test.classpath" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+
 		</plugins>
 
 	</build>
@@ -274,11 +284,11 @@
 			</properties>
 		</profile>
 		<profile>
-            <id>managed-junit</id>
-            <properties>
-                <test.to.include>**/JUnit*</test.to.include>
-                <arquillian.dependency.artifact>arquillian-liberty-managed-junit</arquillian.dependency.artifact>
-            </properties>
-        </profile>
+			<id>managed-junit</id>
+			<properties>
+				<test.to.include>**/JUnit*</test.to.include>
+				<arquillian.dependency.artifact>arquillian-liberty-managed-junit</arquillian.dependency.artifact>
+			</properties>
+		</profile>
 	</profiles>
 </project>

@@ -21,11 +21,13 @@
 	</dependencyManagement>
 
 	<properties>
-        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-	
-		<liberty.managed.version>1.0.0.Final-SNAPSHOT</liberty.managed.version>
-		<liberty.remote.version>1.0.0.Final-SNAPSHOT</liberty.remote.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+
+		<liberty.managed.artifactId>arquillian-wlp-managed-8.5</liberty.managed.artifactId>
+		<liberty.managed.version>1.0.0.CR1</liberty.managed.version>
+		<liberty.remote.artifactId>arquillian-wlp-remote-8.5</liberty.remote.artifactId>
+		<liberty.remote.version>1.0.0.CR1</liberty.remote.version>
 		<junit.version>4.12</junit.version>
 		<testng.version>6.13.1</testng.version>
 	</properties>
@@ -53,8 +55,8 @@
 							</goals>
 							<projectsDirectory>it</projectsDirectory>
 							<properties>
-                                <arquillian.liberty.dependencies.version>${project.version}</arquillian.liberty.dependencies.version>
-                            </properties>
+								<arquillian.liberty.dependencies.version>${project.version}</arquillian.liberty.dependencies.version>
+							</properties>
 							<cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
 							<profiles>
 								<profile>it</profile>

@@ -1,6 +1,7 @@
 import static org.junit.Assert.*;
 
 import java.io.ByteArrayOutputStream;
+import java.io.File;
 import java.io.InputStream;
 import java.net.URL;
 import java.util.Enumeration;
@@ -16,63 +17,63 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 @RunWith(Arquillian.class)
 public class JUnitTransactionRestEndpointIT {
 
-    @Deployment
-    public static WebArchive createDeployment() {
-        return ShrinkWrap.create(WebArchive.class).addPackage("application.rest").addPackage("application");
-    }
+	@Deployment
+	public static WebArchive createDeployment() {
+		return ShrinkWrap.create(WebArchive.class).addPackage("application").addPackage("application.rest");
+	}
 
-    @Test
-    public void testRunningOnServer() throws Exception {
-        System.out.println("--- test running on server");
-        Properties p = System.getProperties();
-        Enumeration<Object> keys = p.keys();
-        while (keys.hasMoreElements()) {
-            String key = (String) keys.nextElement();
-            String value = (String) p.get(key);
-            if (key.equals("wlp.process.type") && value.equals("server")) {
-                return;
-            }
-        }
-        assertTrue(false);
-    }
+	@Test
+	public void testRunningOnServer() throws Exception {
+		System.out.println("--- test running on server");
+		Properties p = System.getProperties();
+		Enumeration<Object> keys = p.keys();
+		while (keys.hasMoreElements()) {
+			String key = (String) keys.nextElement();
+			String value = (String) p.get(key);
+			if (key.equals("wlp.process.type") && value.equals("server")) {
+				return;
+			}
+		}
+		assertTrue(false);
+	}
 
-    @Test
-    public void testDataExistsAtEndpoint() throws Exception {
-        System.out.println("--- test data exists at endpoint");
-        URL endpoint = new URL("http://localhost:9080/myLibertyApp/api/transactions");
-        System.out.println("endpoint url: " + endpoint);
-        String body = readAllAndClose(endpoint.openStream());
-        int bodyLength = body.length();
-        System.out.println("body length is " + bodyLength);
-        assertTrue(bodyLength > 0);
-    }
+	@Test
+	public void testDataExistsAtEndpoint() throws Exception {
+		System.out.println("--- test data exists at endpoint");
+		URL endpoint = new URL("http://localhost:9080/myLibertyApp/api/transactions");
+		System.out.println("endpoint url: " + endpoint);
+		String body = readAllAndClose(endpoint.openStream());
+		int bodyLength = body.length();
+		System.out.println("body length is " + bodyLength);
+		assertTrue(bodyLength > 0);
+	}
 
-    @Test
-    public void testNewDataAddedToEndpoint() throws Exception {
-        System.out.println("--- test new data added to endpoint");
-        String firstBody = readAllAndClose(new URL("http://localhost:9080/myLibertyApp/api/transactions").openStream());
-        int firstBodyLength = firstBody.length();
-        Thread.sleep(12000);
-        String secondBody = readAllAndClose(
-                new URL("http://localhost:9080/myLibertyApp/api/transactions").openStream());
-        int secondBodyLength = secondBody.length();
-        assertTrue(secondBodyLength > firstBodyLength);
-    }
+	@Test
+	public void testNewDataAddedToEndpoint() throws Exception {
+		System.out.println("--- test new data added to endpoint");
+		String firstBody = readAllAndClose(new URL("http://localhost:9080/myLibertyApp/api/transactions").openStream());
+		int firstBodyLength = firstBody.length();
+		Thread.sleep(12000);
+		String secondBody = readAllAndClose(
+				new URL("http://localhost:9080/myLibertyApp/api/transactions").openStream());
+		int secondBodyLength = secondBody.length();
+		assertTrue(secondBodyLength > firstBodyLength);
+	}
 
-    String readAllAndClose(InputStream is) throws Exception {
-        ByteArrayOutputStream out = new ByteArrayOutputStream();
-        try {
-            int read;
-            while ((read = is.read()) != -1) {
-                out.write(read);
-            }
-        } finally {
-            try {
-                is.close();
-            } catch (Exception e) {
-            }
-        }
-        return out.toString();
-    }
+	String readAllAndClose(InputStream is) throws Exception {
+		ByteArrayOutputStream out = new ByteArrayOutputStream();
+		try {
+			int read;
+			while ((read = is.read()) != -1) {
+				out.write(read);
+			}
+		} finally {
+			try {
+				is.close();
+			} catch (Exception e) {
+			}
+		}
+		return out.toString();
+	}
 
 }

@@ -9,12 +9,12 @@
 		<relativePath>../pom.xml</relativePath>
 	</parent>
 	<artifactId>arquillian-liberty-remote-testng</artifactId>
-    <packaging>pom</packaging>
+	<packaging>pom</packaging>
 
 	<dependencies>
 		<dependency>
 			<groupId>org.jboss.arquillian.container</groupId>
-			<artifactId>arquillian-liberty-remote</artifactId>
+			<artifactId>${liberty.remote.artifactId}</artifactId>
 			<version>${liberty.remote.version}</version>
 		</dependency>
 		<dependency>

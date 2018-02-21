@@ -1,0 +1,4 @@
+---
+exclude_paths:
+    - gradle-tests/**
+    - it/managed-tests/**

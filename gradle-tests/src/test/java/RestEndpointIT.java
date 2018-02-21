@@ -45,17 +45,17 @@ public class RestEndpointIT {
 		assertTrue(bodyLength > 0);
 	}
 
-	/*@Test
+	@Test
 	public void testNewDataAddedToEndpoint() throws Exception {
 		System.out.println("--- test new data added to endpoint");
 		String firstBody = readAllAndClose(new URL("http://localhost:9080/myLibertyApp/api/transactions").openStream());
 		int firstBodyLength = firstBody.length();
-		Thread.sleep(70000);
+		Thread.sleep(12000);
 		String secondBody = readAllAndClose(
 				new URL("http://localhost:9080/myLibertyApp/api/transactions").openStream());
 		int secondBodyLength = secondBody.length();
 		assertTrue(secondBodyLength > firstBodyLength);
-	}*/
+	}
 	
 	String readAllAndClose(InputStream is) throws Exception {
 		ByteArrayOutputStream out = new ByteArrayOutputStream();
