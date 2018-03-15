@@ -40,8 +40,6 @@
 		<testServerHttpsPort>9443</testServerHttpsPort>
 		<!--This is set in the ibm-web-ext.xml file -->
 		<warContext>myLibertyApp</warContext>
-
-		<!-- <arquillian.liberty.dependencies.version>1.0.0.Final-SNAPSHOT</arquillian.liberty.dependencies.version> -->
 	</properties>
 
 	<repositories>
@@ -189,7 +187,7 @@
 					<assemblyArtifact>
 						<groupId>com.ibm.websphere.appserver.runtime</groupId>
 						<artifactId>wlp-webProfile7</artifactId>
-						<version>17.0.0.2</version>
+						<version>17.0.0.4</version>
 						<type>zip</type>
 					</assemblyArtifact>
 					<assemblyInstallDirectory>${project.build.directory}</assemblyInstallDirectory>
