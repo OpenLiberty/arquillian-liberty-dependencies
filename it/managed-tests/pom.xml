@@ -125,13 +125,6 @@
 			<scope>provided</scope>
 		</dependency>
 		<dependency>
-			<groupId>net.wasdev.wlp.starters.web</groupId>
-			<artifactId>provided-pom</artifactId>
-			<version>0.0.3</version>
-			<type>pom</type>
-			<scope>provided</scope>
-		</dependency>
-		<dependency>
 			<groupId>net.wasdev.wlp.starters.persistence</groupId>
 			<artifactId>provided-pom</artifactId>
 			<version>0.0.3</version>
@@ -140,13 +133,6 @@
 		</dependency>
 		<dependency>
 			<groupId>net.wasdev.wlp.starters.rest</groupId>
-			<artifactId>runtime-pom</artifactId>
-			<version>0.0.3</version>
-			<type>pom</type>
-			<scope>runtime</scope>
-		</dependency>
-		<dependency>
-			<groupId>net.wasdev.wlp.starters.web</groupId>
 			<artifactId>runtime-pom</artifactId>
 			<version>0.0.3</version>
 			<type>pom</type>

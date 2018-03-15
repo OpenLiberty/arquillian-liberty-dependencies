@@ -8,4 +8,5 @@ env:
     - TEST_COMMAND="mvn verify -Pit"
 
 script:
+- mvn clean install
 - (eval "$TEST_COMMAND")
