@@ -10,3 +10,6 @@ env:
 script:
 - mvn clean install
 - (eval "$TEST_COMMAND")
+
+after_failure:
+    - ls -R ./target/it/managed-tests | awk '/:$/&&f{s=$0;f=0}/:$/&&!f{sub(/:$/,"");s=$0;f=1;next}NF&&f{ print s"/"$0 }'
