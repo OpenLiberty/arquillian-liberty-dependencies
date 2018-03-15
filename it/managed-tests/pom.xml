@@ -239,6 +239,18 @@
 				</dependencies>
 				<executions>
 					<execution>
+						<id>create-test-classes-folder</id>
+						<phase>process-test-resources</phase>
+						<configuration>
+							<target>
+								<mkdir dir="${project.build.directory}/test-classes" />
+							</target>
+						</configuration>
+						<goals>
+							<goal>run</goal>
+						</goals>
+					</execution>
+					<execution>
 						<id>compile-and-copy-test-classes</id>
 						<phase>process-test-resources</phase>
 						<configuration>
