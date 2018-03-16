@@ -4,7 +4,7 @@ jdk:
     - openjdk8
 
 env:
-    - TEST_COMMAND="cd gradle-tests; gradle clean build -i -s"
+    - TEST_COMMAND="cd gradle-tests; ./gradlew clean build -i -s"
     - TEST_COMMAND="mvn verify -Pit"
 
 script:
