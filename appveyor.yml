@@ -11,6 +11,7 @@ install:
       - cmd: cd C:\projects\arquillian-liberty-dependencies
 
 build_script:
-      - "mvn clean install verify -Pit -U"
+      - "mvn clean install"
+      - "mvn verify -Pit -U"
       - "cd gradle-tests & gradle clean build -i -s" 
 test: off
