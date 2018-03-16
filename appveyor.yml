@@ -13,5 +13,5 @@ install:
 build_script:
       - "mvn clean install"
       - "mvn verify -Pit -U"
-      - "cd gradle-tests & C:\projects\arquillian-liberty-dependencies\gradlew.bat clean build -i -s" 
+      - "cd gradle-tests & C:\\projects\\arquillian-liberty-dependencies\\gradlew.bat clean build -i -s" 
 test: off
