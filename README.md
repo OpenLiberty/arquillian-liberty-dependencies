@@ -39,7 +39,7 @@ In order to prevent dependency conflicts, you'll need to use the `arquillian-bom
 	<dependency>
 		<groupId>io.openliberty.arquillian</groupId>
 		<artifactId>arquillian-liberty-managed-junit</artifactId>
-		<version>1.0.0.Final</version>
+		<version>1.0</version>
 		<type>pom</type>
 		<scope>test</scope>
 	</dependency>
@@ -53,7 +53,7 @@ A complete Maven example, used as an integration test for this repository, is av
 
 ### Gradle
 
-Unlike in Maven, the `arquillian-bom` is not required in Gradle in order to prevent dependency conflicts. When you add a dependency bundle artifact to your Gradle build, Gradle will resolve artifacts versions for transitive dependencies of the bundle using the `arquillian-bom` specified in the `arquillian-liberty-dependencies` parent POM. As of version `1.0.0.Final`, the `arquillian-bom` version is set to `1.2.0`. 
+Unlike in Maven, the `arquillian-bom` is not required in Gradle in order to prevent dependency conflicts. When you add a dependency bundle artifact to your Gradle build, Gradle will resolve artifacts versions for transitive dependencies of the bundle using the `arquillian-bom` specified in the `arquillian-liberty-dependencies` parent POM. As of version `1.0`, the `arquillian-bom` version is set to `1.2.0`. 
 
 If you want to override the version of `arquillian-bom` specified in the `arquillian-liberty-dependencies` parent POM, you'll need to use Spring's [`dependency-management-plugin`](https://spring.io/blog/2015/02/23/better-dependency-management-for-gradle) to get Gradle to read and understand BOMs. 
 
