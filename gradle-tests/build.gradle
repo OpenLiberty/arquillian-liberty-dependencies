@@ -77,7 +77,7 @@ dependencies {
     providedCompile ('com.ibm.websphere.appserver.api:com.ibm.websphere.appserver.api.persistence:1.0.18')
     providedCompile ('org.eclipse.persistence:javax.persistence:2.1.0')
    
-    testCompile "io.openliberty.arquillian:arquillian-liberty-managed-junit:1.0-SNAPSHOT"
+    testCompile group: "io.openliberty.arquillian", name: "arquillian-liberty-managed-junit", version: dependencyBundleVersion
     testCompile files("${System.properties['java.home']}/../lib/tools.jar")
 
     libertyRuntime "com.ibm.websphere.appserver.runtime:wlp-webProfile7:17.0.0.4"
