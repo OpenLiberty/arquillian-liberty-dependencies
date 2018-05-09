@@ -34,21 +34,33 @@
 			<dependency>
 				<groupId>org.jboss.arquillian</groupId>
 				<artifactId>arquillian-bom</artifactId>
-				<version>1.2.0.Final</version>
+				<version>1.4.0.Final</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
 		</dependencies>
 	</dependencyManagement>
 
+	<repositories>
+	    <repository>
+	        <id>oss-sonatype</id>
+	        <name>oss-sonatype</name>
+	        <url>https://oss.sonatype.org/content/repositories/snapshots/</url>
+	        <snapshots>
+	            <enabled>true</enabled>
+	        </snapshots>
+	    </repository>
+	</repositories>
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
-		<liberty.managed.artifactId>arquillian-wlp-managed-8.5</liberty.managed.artifactId>
-		<liberty.managed.version>1.0.0.CR1</liberty.managed.version>
-		<liberty.remote.artifactId>arquillian-wlp-remote-8.5</liberty.remote.artifactId>
-		<liberty.remote.version>1.0.0.CR1</liberty.remote.version>
+		<liberty.arquillian.groupId>io.openliberty.arquillian</liberty.arquillian.groupId>
+		<liberty.arquillian.version>1.0.0-SNAPSHOT</liberty.arquillian.version>
+		<liberty.managed.artifactId>arquillian-liberty-managed</liberty.managed.artifactId>
+		<liberty.remote.artifactId>arquillian-liberty-remote</liberty.remote.artifactId>
+
 		<junit.version>4.12</junit.version>
 		<testng.version>6.13.1</testng.version>
 	</properties>

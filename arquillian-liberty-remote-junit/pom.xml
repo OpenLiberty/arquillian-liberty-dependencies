@@ -12,9 +12,9 @@
 
 	<dependencies>
 		<dependency>
-			<groupId>org.jboss.arquillian.container</groupId>
+			<groupId>${liberty.arquillian.groupId}</groupId>
 			<artifactId>${liberty.remote.artifactId}</artifactId>
-			<version>${liberty.remote.version}</version>
+			<version>${liberty.arquillian.version}</version>
 		</dependency>
 		<dependency>
 			<groupId>org.jboss.arquillian.junit</groupId>
