@@ -17,6 +17,32 @@ subprojects {
 
     apply plugin: "io.spring.dependency-management"
 
+    buildscript {
+        repositories {
+            mavenLocal()
+            mavenCentral()
+        }
+        dependencies {
+            classpath group: 'net.wasdev.wlp.gradle.plugins', name: 'liberty-gradle-plugin', version: '2.3'
+            classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
+        }
+    }
+
+    sourceSets {
+        main {
+            java {
+                srcDir "${rootProject.projectDir}/src/main/java/"
+            }
+        }
+        test {
+            java {
+                srcDir "${rootProject.projectDir}/src/test/java"
+            }
+        }
+    }
+
+    project.buildDir = '../build'
+
     sourceCompatibility = 1.8
     targetCompatibility = 1.8
     tasks.withType(JavaCompile) {
