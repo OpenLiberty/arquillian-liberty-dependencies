@@ -4,107 +4,105 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.wasdev.wlp.gradle.plugins', name: 'liberty-gradle-plugin', version: '2.2'
+        classpath group: 'net.wasdev.wlp.gradle.plugins', name: 'liberty-gradle-plugin', version: '2.3'
         classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
     }
 }
 
-apply plugin: 'war'
+subprojects {
+    apply plugin: 'war'
 
-apply plugin: 'java'
-apply plugin: 'liberty'
+    apply plugin: 'java'
+    apply plugin: 'liberty'
 
-apply plugin: "io.spring.dependency-management"
+    apply plugin: "io.spring.dependency-management"
 
-sourceCompatibility = 1.8
-targetCompatibility = 1.8
-tasks.withType(JavaCompile) {
-    options.encoding = 'UTF-8'
-}
-
-repositories {
-    mavenLocal()
-    mavenCentral()
-}
-    
-ext {
-    // Liberty server properties
-    wlpServerName = 'LibertyProjectServer'
-    serverDirectory = "${project.buildDir}/wlp/usr/servers/${wlpServerName}"
-    testServerHttpPort = 9080
-    testServerHttpsPort = 9443
-
-    // This is set in the ibm-web-ext.xml file
-    warContext = 'test-configure-arquillian'
-}
-    
-war {
-    archiveName = warContext + '.' + extension
-}
-
-liberty {
-    server {
-        configFile = file("src/main/liberty/config/server.xml")
-        bootstrapProperties = ['build.directory': buildDir, 'default.http.port': "${testServerHttpPort}" , 'default.https.port': "${testServerHttpsPort}", 'appContext': "${warContext}", 'appLocation': "${war.archiveName}"]
-        name = wlpServerName
-        apps = [war]
-        looseApplication = true
-        verifyAppStartTimeout = 30
-     }
-     
-     
-}
-
-configurations {
-    h2
-    h2.transitive = true
-    compile.extendsFrom(h2)
-}
-
-dependencyManagement {
-    imports {
-        mavenBom "org.jboss.arquillian:arquillian-bom:1.4.0.Final"
+    sourceCompatibility = 1.8
+    targetCompatibility = 1.8
+    tasks.withType(JavaCompile) {
+        options.encoding = 'UTF-8'
     }
-}
 
-dependencies {
-    h2 "com.h2database:h2:1.4.195"
+    repositories {
+        mavenLocal()
+        mavenCentral()
+    }
 
-    providedCompile "javax.json:javax.json-api:1.0"
-    providedCompile "javax.ejb:javax.ejb-api:3.2"
-    providedCompile ('javax.ws.rs:javax.ws.rs-api:2.0.1')
-    providedCompile ('com.ibm.websphere.appserver.api:com.ibm.websphere.appserver.api.jaxrs20:1.0.18')
-    providedCompile ('com.ibm.websphere.appserver.api:com.ibm.websphere.appserver.api.persistence:1.0.18')
-    providedCompile ('org.eclipse.persistence:javax.persistence:2.1.0')
-   
-    testCompile group: "io.openliberty.arquillian", name: "arquillian-liberty-managed-junit", version: dependencyBundleVersion
-    testCompile files("${System.properties['java.home']}/../lib/tools.jar")
+    ext {
+        // Liberty server properties
+        wlpServerName = 'LibertyProjectServer'
+        serverDirectory = "${project.buildDir}/wlp/usr/servers/${wlpServerName}"
+        testServerHttpPort = 9080
+        testServerHttpsPort = 9443
+        // This is set in the ibm-web-ext.xml file
+        warContext = 'test-configure-arquillian'
+    }
 
-    libertyRuntime "com.ibm.websphere.appserver.runtime:wlp-webProfile7:17.0.0.4"
-}
-
-task copyH2 {
-    doLast {
-        copy {
-            from configurations.h2
-            into "$buildDir/wlp/usr/shared/resources/h2"
-            include "*.jar"
+    dependencyManagement {
+        imports {
+            mavenBom "org.jboss.arquillian:arquillian-bom:1.4.0.Final"
         }
     }
+
+    war {
+        archiveName = warContext + '.' + extension
+    }
+
+    liberty {
+        server {
+            configFile = file("${rootProject.projectDir}/src/main/liberty/config/server.xml")
+            bootstrapProperties = ['build.directory': buildDir, 'default.http.port': "${testServerHttpPort}" , 'default.https.port': "${testServerHttpsPort}", 'appContext': "${warContext}", 'appLocation': "${war.archiveName}"]
+            name = wlpServerName
+            apps = [war]
+            looseApplication = true
+            verifyAppStartTimeout = 30
+         }
+    }
+
+    configurations {
+        h2
+        h2.transitive = true
+        compile.extendsFrom(h2)
+    }
+
+    dependencies {
+        h2 "com.h2database:h2:1.4.195"
+
+        providedCompile "javax.json:javax.json-api:1.0"
+        providedCompile "javax.ejb:javax.ejb-api:3.2"
+        providedCompile ('javax.ws.rs:javax.ws.rs-api:2.0.1')
+        providedCompile ('com.ibm.websphere.appserver.api:com.ibm.websphere.appserver.api.jaxrs20:1.0.18')
+        providedCompile ('com.ibm.websphere.appserver.api:com.ibm.websphere.appserver.api.persistence:1.0.18')
+        providedCompile ('org.eclipse.persistence:javax.persistence:2.1.0')
+
+        testCompile group: "io.openliberty.arquillian", name: "arquillian-liberty-managed-junit", version: dependencyBundleVersion
+
+        testCompile files("${System.properties['java.home']}/../lib/tools.jar")
+    }
+
+    task copyH2 {
+        doLast {
+            copy {
+                from configurations.h2
+                into "$buildDir/wlp/usr/shared/resources/h2"
+                include "*.jar"
+            }
+        }
+    }
+
+    libertyCreate.finalizedBy 'copyH2'
+
+    arquillianConfiguration {
+        arquillianProperties = ['outputToConsole': 'true', 'verifyApps': project.name]
+    }
+
+    tasks.withType(Test) {
+        group 'Verification'
+        testLogging.showStandardStreams = true
+        dependsOn 'installApps', 'testClasses'
+        reports.html.destination = file("$buildDir/reports/")
+        reports.junitXml.destination = file("$buildDir/test-results/")
+        include '**/*'
+        dependsOn 'installApps', 'testClasses', 'configureArquillian'
+    }
 }
-
-libertyCreate.finalizedBy 'copyH2'
-
-configureArquillian {
-    arquillianProperties = ['outputToConsole': 'true', 'verifyApps': 'gradle-tests']
-}
-
-tasks.withType(Test) {
-    group 'Verification'
-    testLogging.showStandardStreams = true
-    dependsOn 'installApps', 'testClasses'
-    reports.html.destination = file("$buildDir/reports/")
-    reports.junitXml.destination = file("$buildDir/test-results/")
-    include '**/*'
-    dependsOn 'installApps', 'testClasses', 'configureArquillian'
-} 
