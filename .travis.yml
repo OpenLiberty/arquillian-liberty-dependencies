@@ -1,15 +1,12 @@
+sudo: required
 language: java
-
 jdk:
     - openjdk8
-
 env:
     - TEST_COMMAND="cd gradle-tests; ./gradlew clean build -i -s"
     - TEST_COMMAND="mvn verify -Pit"
-
 script:
 - mvn clean install
 - (eval "$TEST_COMMAND")
-
 after_failure:
     - ls -R ./target/it/managed-tests | awk '/:$/&&f{s=$0;f=0}/:$/&&!f{sub(/:$/,"");s=$0;f=1;next}NF&&f{ print s"/"$0 }'
