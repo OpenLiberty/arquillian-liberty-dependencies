@@ -1,0 +1,3 @@
+dependencies {
+    libertyRuntime group: 'io.openliberty', name: 'openliberty-runtime', version: '18.0.0.1'
+}

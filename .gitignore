@@ -1,6 +1,7 @@
 */build
 */.gradle
 target
+.DS_STORE
 
 .project
 .metadata
@@ -27,7 +28,7 @@ local.properties
 # CDT-specific (C/C++ Development Tooling)
 .cproject
 
-# CDT- autotools 
+# CDT- autotools
 .autotools
 
 # Java annotation processor (APT)
@@ -55,4 +56,3 @@ local.properties
 .cache-main
 .scala_dependencies
 .worksheet
-
