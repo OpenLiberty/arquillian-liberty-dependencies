@@ -57,7 +57,7 @@
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
 
 		<liberty.arquillian.groupId>io.openliberty.arquillian</liberty.arquillian.groupId>
-		<liberty.arquillian.version>1.0.0</liberty.arquillian.version>
+		<liberty.arquillian.version>1.0.1-SNAPSHOT</liberty.arquillian.version>
 		<liberty.managed.artifactId>arquillian-liberty-managed</liberty.managed.artifactId>
 		<liberty.remote.artifactId>arquillian-liberty-remote</liberty.remote.artifactId>
 
