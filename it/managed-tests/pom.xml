@@ -31,8 +31,8 @@
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-		<maven.compiler.source>1.8</maven.compiler.source>
-		<maven.compiler.target>1.8</maven.compiler.target>
+		<maven.compiler.source>1.7</maven.compiler.source>
+        <maven.compiler.target>1.7</maven.compiler.target>
 
 		<!-- Liberty server properties -->
 		<wlpServerName>LibertyProjectServer</wlpServerName>
@@ -119,46 +119,46 @@
 			<scope>provided</scope>
 		</dependency>
 
-        <!-- Rest dependencies -->
-        <dependency>
-            <groupId>javax.ws.rs</groupId>
-            <artifactId>javax.ws.rs-api</artifactId>
-            <version>2.0.1</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>javax.json</groupId>
-            <artifactId>javax.json-api</artifactId>
-            <version>1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.ibm.websphere.appserver.api</groupId>
-            <artifactId>com.ibm.websphere.appserver.api.jaxrs20</artifactId>
-            <version>1.0.10</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>com.ibm.websphere.appserver.api</groupId>
-            <artifactId>com.ibm.websphere.appserver.api.json</artifactId>
-            <version>1.0.10</version>
-            <scope>provided</scope>
-        </dependency>
+		<!-- Rest dependencies -->
+		<dependency>
+			<groupId>javax.ws.rs</groupId>
+			<artifactId>javax.ws.rs-api</artifactId>
+			<version>2.0.1</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>javax.json</groupId>
+			<artifactId>javax.json-api</artifactId>
+			<version>1.0</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.websphere.appserver.api</groupId>
+			<artifactId>com.ibm.websphere.appserver.api.jaxrs20</artifactId>
+			<version>1.0.10</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>com.ibm.websphere.appserver.api</groupId>
+			<artifactId>com.ibm.websphere.appserver.api.json</artifactId>
+			<version>1.0.10</version>
+			<scope>provided</scope>
+		</dependency>
 
-        <!-- Persistence dependencies -->
-        <dependency>
-            <groupId>com.ibm.websphere.appserver.api</groupId>
-            <artifactId>com.ibm.websphere.appserver.api.persistence</artifactId>
-            <version>1.0.10</version>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.eclipse.persistence</groupId>
-            <artifactId>javax.persistence</artifactId>
-            <version>2.1.0</version>
-            <scope>provided</scope>
-        </dependency>
-        
+		<!-- Persistence dependencies -->
+		<dependency>
+			<groupId>com.ibm.websphere.appserver.api</groupId>
+			<artifactId>com.ibm.websphere.appserver.api.persistence</artifactId>
+			<version>1.0.10</version>
+			<scope>provided</scope>
+		</dependency>
+		<dependency>
+			<groupId>org.eclipse.persistence</groupId>
+			<artifactId>javax.persistence</artifactId>
+			<version>2.1.0</version>
+			<scope>provided</scope>
+		</dependency>
+
 	</dependencies>
 	<build>
 		<plugins>
@@ -244,15 +244,6 @@
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-antrun-plugin</artifactId>
 				<version>1.8</version>
-				<dependencies>
-					<dependency>
-						<groupId>com.sun</groupId>
-						<artifactId>tools</artifactId>
-						<version>1.5.0</version>
-						<scope>system</scope>
-						<systemPath>${java.home}/../lib/tools.jar</systemPath>
-					</dependency>
-				</dependencies>
 				<executions>
 					<execution>
 						<id>create-test-classes-folder</id>
@@ -271,9 +262,10 @@
 						<phase>process-test-resources</phase>
 						<configuration>
 							<target>
+								<property name="build.compiler" value="extJavac" />
 								<javac srcdir="${project.basedir}/src/test-profile-resources"
 									destdir="${project.build.directory}/test-classes" includes="${test.to.include}"
-									classpathref="maven.test.classpath" />
+									classpathref="maven.test.classpath" includeantruntime="false" />
 							</target>
 						</configuration>
 						<goals>
@@ -314,12 +306,12 @@
 			</properties>
 		</profile>
 		<profile>
-            <id>ol</id>
-            <properties>
-                <runtimeGroupId>io.openliberty</runtimeGroupId>
-                <runtimeArtifactId>openliberty-runtime</runtimeArtifactId>
-                <runtimeVersion>18.0.0.1</runtimeVersion>
-            </properties>
-        </profile>
+			<id>ol</id>
+			<properties>
+				<runtimeGroupId>io.openliberty</runtimeGroupId>
+				<runtimeArtifactId>openliberty-runtime</runtimeArtifactId>
+				<runtimeVersion>18.0.0.1</runtimeVersion>
+			</properties>
+		</profile>
 	</profiles>
 </project>
