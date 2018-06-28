@@ -10,7 +10,7 @@ env:
 matrix:
     exclude:
         - jdk: openjdk7
-        - env: TEST_COMMAND="cd gradle-tests; ./gradlew clean build -i -s"
+          env: TEST_COMMAND="cd gradle-tests; ./gradlew clean build -i -s"
 script:
     - mvn clean install
     - (eval "$TEST_COMMAND")
