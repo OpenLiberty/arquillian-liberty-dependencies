@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'net.wasdev.wlp.gradle.plugins', name: 'liberty-gradle-plugin', version: '2.3'
+        classpath group: 'net.wasdev.wlp.gradle.plugins', name: 'liberty-gradle-plugin', version: '2.4.1'
         classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
     }
 }
@@ -23,10 +23,10 @@ subprojects {
             mavenCentral()
         }
         dependencies {
-            classpath group: 'net.wasdev.wlp.gradle.plugins', name: 'liberty-gradle-plugin', version: '2.3'
+            classpath group: 'net.wasdev.wlp.gradle.plugins', name: 'liberty-gradle-plugin', version: '2.4.1'
             classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
         }
-    }
+    
 
     sourceSets {
         main {
