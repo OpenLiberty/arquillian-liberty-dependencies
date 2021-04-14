@@ -19,7 +19,7 @@ import org.arquillian.example.PhraseBuilder;
 
 import java.io.File;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.testng.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;

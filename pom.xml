@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<parent>
+        <groupId>net.wasdev.maven.parent</groupId>
+        <artifactId>parent</artifactId>
+        <version>1.4</version>
+        <relativePath />
+    </parent>
+	
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.openliberty.arquillian</groupId>
-	<artifactId>arquillian-liberty-dependencies</artifactId>
-	<version>1.1.7-SNAPSHOT</version>
+	<artifactId>arquillian-liberty-jakarta-dependencies</artifactId>
+	<version>2.0.0-SNAPSHOT</version>
 	<packaging>pom</packaging>
-	<name>Arquillian Liberty Dependency Bundles</name>
-
-	<parent>
-		<groupId>net.wasdev.maven.parent</groupId>
-		<artifactId>parent</artifactId>
-		<version>1.4</version>
-		<relativePath />
-	</parent>
+	<name>Arquillian Liberty Jakarta Dependency Bundles</name>
 
 	<licenses>
 		<license>
@@ -34,7 +34,7 @@
 			<dependency>
 				<groupId>org.jboss.arquillian</groupId>
 				<artifactId>arquillian-bom</artifactId>
-				<version>1.4.0.Final</version>
+				<version>1.7.0.Alpha9</version>
 				<scope>import</scope>
 				<type>pom</type>
 			</dependency>
@@ -59,19 +59,19 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 
 		<liberty.arquillian.groupId>io.openliberty.arquillian</liberty.arquillian.groupId>
-		<liberty.arquillian.version>1.0.6</liberty.arquillian.version>
-		<liberty.managed.artifactId>arquillian-liberty-managed</liberty.managed.artifactId>
-		<liberty.remote.artifactId>arquillian-liberty-remote</liberty.remote.artifactId>
+		<liberty.arquillian.version>2.0.0</liberty.arquillian.version>
+		<liberty.managed.artifactId>arquillian-liberty-managed-jakarta</liberty.managed.artifactId>
+		<liberty.remote.artifactId>arquillian-liberty-remote-jakarta</liberty.remote.artifactId>
 
 		<junit.version>4.12</junit.version>
 		<testng.version>6.13.1</testng.version>
 	</properties>
 
 	<modules>
-		<module>arquillian-liberty-managed-junit</module>
-		<module>arquillian-liberty-managed-testng</module>
-		<module>arquillian-liberty-remote-junit</module>
-		<module>arquillian-liberty-remote-testng</module>
+		<module>arquillian-liberty-managed-jakarta-junit</module>
+		<module>arquillian-liberty-managed-jakarta-testng</module>
+		<module>arquillian-liberty-remote-jakarta-junit</module>
+		<module>arquillian-liberty-remote-jakarta-testng</module>
 	</modules>
 
 	<build>
