@@ -120,7 +120,7 @@
 							</properties>
 							<cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
 							<profiles>
-								<profile>it</profile>
+								<profile>ol</profile>
 							</profiles>
 							<streamLogs>true</streamLogs>
 						</configuration>

@@ -73,7 +73,7 @@ subprojects {
     dependencies {
         compile ('jakarta.enterprise:jakarta.enterprise.cdi-api:3.0.0')
        
-        testCompile group: "io.openliberty.arquillian", name: "arquillian-liberty-managed-jakarta-junit", version: "2.0.0"
+        testCompile group: "io.openliberty.arquillian", name: "arquillian-liberty-managed-jakarta-junit", version: "2.0.0-SNAPSHOT"
         testCompile ('org.jboss.shrinkwrap:shrinkwrap-api')
         testCompile files("${System.properties['java.home']}/../lib/tools.jar")
     }
