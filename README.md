@@ -124,4 +124,4 @@ dependencyManagement {
 
 You can use the command `gradle dependencies` to view transitive dependencies and their versions. 
 
-The previous example uses version `1.7.0.Alpha9` of the `arquillian-bom`. A full Gradle example with Jakarta EE 9 is available in the `gradle-tests` folder.
+The previous example uses version `1.7.0.Alpha9` of the `arquillian-bom` for Jakarta EE 9 projects. If using Java EE 8 or below, use version `1.1.13.Final` of the `arquillian-bom`. A full Gradle example with Jakarta EE 9 is available in the `gradle-tests` folder.

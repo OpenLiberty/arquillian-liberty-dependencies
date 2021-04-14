@@ -68,10 +68,10 @@
 	</properties>
 
 	<modules>
-		<module>arquillian-liberty-managed-jakarta-junit</module>
-		<module>arquillian-liberty-managed-jakarta-testng</module>
-		<module>arquillian-liberty-remote-jakarta-junit</module>
-		<module>arquillian-liberty-remote-jakarta-testng</module>
+		<module>arquillian-liberty-managed-junit</module>
+		<module>arquillian-liberty-managed-testng</module>
+		<module>arquillian-liberty-remote-junit</module>
+		<module>arquillian-liberty-remote-testng</module>
 	</modules>
 
 	<build>
