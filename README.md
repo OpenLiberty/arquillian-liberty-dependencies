@@ -11,7 +11,7 @@ In this repository, you'll find 4 artifacts that you can use in your Maven and G
 - `io.openliberty.arquillian:arquillian-liberty-remote-jakarta-junit` for using the Arquillian Liberty Remote container with JUnit
 - `io.openliberty.arquillian:arquillian-liberty-remote-jakarta-testng` for using the Arquillian Liberty Remote container with TestNG
 
-For Jakarta EE 8 or below, the following 4 artifacts are available:
+For Java EE 8 or below, the following 4 artifacts are available:
 
 - `io.openliberty.arquillian:arquillian-liberty-managed-junit` for using the Arquillian Liberty Managed container with JUnit
 - `io.openliberty.arquillian:arquillian-liberty-managed-testng` for using the Arquillian Liberty Managed container with TestNG
@@ -53,7 +53,7 @@ In order to prevent dependency conflicts, you'll need to use the `arquillian-bom
 </dependencies>
 ```
 
-**Jakarta EE 8 or below example:**
+**Java EE 8 or below example:**
 ```
 <dependencyManagement>
 	<dependencies>
