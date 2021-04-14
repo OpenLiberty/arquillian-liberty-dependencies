@@ -1,5 +1,5 @@
 /*
- * Copyright 2012, 2018, IBM Corporation, Red Hat Middleware LLC, and individual contributors
+ * Copyright 2012, 2021, IBM Corporation, Red Hat Middleware LLC, and individual contributors
  * by the @authors tag. See the copyright.txt in the distribution for a
  * full listing of individual contributors.
  *
@@ -20,8 +20,8 @@ package org.arquillian.example;
 import java.text.MessageFormat;
 import java.util.HashMap;
 import java.util.Map;
-import javax.annotation.PostConstruct;
-import javax.enterprise.context.ApplicationScoped;
+import jakarta.annotation.PostConstruct;
+import jakarta.enterprise.context.ApplicationScoped;
 
 /**
  * @author <a href="http://community.jboss.org/people/dan.j.allen">Dan Allen</a>

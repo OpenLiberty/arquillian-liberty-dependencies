@@ -1,5 +1,5 @@
 /*
- * Copyright 2012, 2018, IBM Corporation, Red Hat Middleware LLC, and individual contributors
+ * Copyright 2012, 2021, IBM Corporation, Red Hat Middleware LLC, and individual contributors
  * by the @authors tag. See the copyright.txt in the distribution for a
  * full listing of individual contributors.
  *
@@ -22,7 +22,7 @@ import org.arquillian.example.PhraseBuilder;
 
 import java.io.File;
 
-import javax.inject.Inject;
+import jakarta.inject.Inject;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;

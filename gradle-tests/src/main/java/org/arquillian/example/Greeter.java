@@ -1,5 +1,5 @@
 /*
- * Copyright 2012, 2018, IBM Corporation, Red Hat Middleware LLC, and individual contributors
+ * Copyright 2012, 2021, IBM Corporation, Red Hat Middleware LLC, and individual contributors
  * by the @authors tag. See the copyright.txt in the distribution for a
  * full listing of individual contributors.
  *
@@ -18,8 +18,8 @@
 package org.arquillian.example;
 
 import java.io.PrintStream;
-import javax.enterprise.context.ApplicationScoped;
-import javax.inject.Inject;
+import jakarta.enterprise.context.ApplicationScoped;
+import jakarta.inject.Inject;
 
 /**
  * @author <a href="http://community.jboss.org/people/dan.j.allen">Dan Allen</a>

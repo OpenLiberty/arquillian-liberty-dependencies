@@ -4,7 +4,14 @@ The Liberty dependency bundles for Arquillian make it easy for you to manage ver
 
 ## Dependencies
 
-In this repository, you'll find 4 artifacts that you can use in your Maven and Gradle projects. They are:
+In this repository, you'll find 4 artifacts that you can use in your Maven and Gradle projects with Jakarta EE 9. They are:
+
+- `io.openliberty.arquillian:arquillian-liberty-managed-jakarta-junit` for using the Arquillian Liberty Managed container with JUnit
+- `io.openliberty.arquillian:arquillian-liberty-managed-jakarta-testng` for using the Arquillian Liberty Managed container with TestNG
+- `io.openliberty.arquillian:arquillian-liberty-remote-jakarta-junit` for using the Arquillian Liberty Remote container with JUnit
+- `io.openliberty.arquillian:arquillian-liberty-remote-jakarta-testng` for using the Arquillian Liberty Remote container with TestNG
+
+For Java EE 8 or below, the following 4 artifacts are available:
 
 - `io.openliberty.arquillian:arquillian-liberty-managed-junit` for using the Arquillian Liberty Managed container with JUnit
 - `io.openliberty.arquillian:arquillian-liberty-managed-testng` for using the Arquillian Liberty Managed container with TestNG
@@ -19,8 +26,34 @@ In this repository, you'll find 4 artifacts that you can use in your Maven and G
 
 In order to prevent dependency conflicts, you'll need to use the `arquillian-bom` in conjunction with a dependency bundle. While the `arquillian-liberty-dependencies` parent POM already contains the `arquillian-bom`, this is used only to build the dependency bundle artifacts and will not be applied to your project when you include them. The version of the `arquillian-bom` that you specify will apply to transitive dependencies of your project. 
 
-**Example:**
+**Jakarta EE 9 example:**
+```
+<dependencyManagement>
+	<dependencies>
+		<dependency>
+			<groupId>org.jboss.arquillian</groupId>
+			<artifactId>arquillian-bom</artifactId>
+			<version>1.7.0.Alpha9</version>
+			<scope>import</scope>
+			<type>pom</type>
+		</dependency>
+	</dependencies>
+</dependencyManagement>
 
+<dependencies>
+	...
+	<dependency>
+		<groupId>io.openliberty.arquillian</groupId>
+		<artifactId>arquillian-liberty-managed-jakarta-junit</artifactId>
+		<version>2.0.0</version>
+		<type>pom</type>
+		<scope>test</scope>
+	</dependency>
+	...
+</dependencies>
+```
+
+**Java EE 8 or below example:**
 ```
 <dependencyManagement>
 	<dependencies>
@@ -84,11 +117,11 @@ Step 3: Add a `dependencyManagement` block that contains the `arquillian-bom`:
 ```
 dependencyManagement {
     imports {
-        mavenBom "org.jboss.arquillian:arquillian-bom:1.1.13.Final"
+        mavenBom "org.jboss.arquillian:arquillian-bom:1.7.0.Alpha9"
     }
 }
 ```
 
 You can use the command `gradle dependencies` to view transitive dependencies and their versions. 
 
-The previous example uses version `1.1.13.Final` of the `arquillian-bom`. A full Gradle example is available in the `gradle-tests` folder. 
+The previous example uses version `1.7.0.Alpha9` of the `arquillian-bom` for Jakarta EE 9 projects. If using Java EE 8 or below, use version `1.1.13.Final` of the `arquillian-bom`. A full Gradle example with Jakarta EE 9 is available in the `gradle-tests` folder.

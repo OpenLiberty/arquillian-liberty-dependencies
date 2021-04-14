@@ -9,9 +9,9 @@
     <packaging>war</packaging>
 
     <parent>
-        <groupId>net.wasdev.wlp.maven.parent</groupId>
+        <groupId>io.openliberty.tools</groupId>
         <artifactId>liberty-maven-app-parent</artifactId>
-        <version>2.5</version>
+        <version>3.3.4</version>
     </parent>
 
     <licenses>
@@ -46,8 +46,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
         <!-- Liberty server properties -->
         <wlpServerName>LibertyProjectServer</wlpServerName>
@@ -62,7 +62,7 @@
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
-                <version>1.4.0.Final</version>
+                <version>1.7.0.Alpha9</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -78,9 +78,9 @@
             <scope>test</scope>
         </dependency>
         <dependency>
-            <groupId>javax.enterprise</groupId>
-            <artifactId>cdi-api</artifactId>
-            <version>1.2</version>
+            <groupId>jakarta.enterprise</groupId>
+            <artifactId>jakarta.enterprise.cdi-api</artifactId>
+            <version>3.0.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -143,9 +143,9 @@
             </plugin>
 
             <plugin>
-                <groupId>net.wasdev.wlp.maven.plugins</groupId>
+                <groupId>io.openliberty.tools</groupId>
                 <artifactId>liberty-maven-plugin</artifactId>
-                <version>2.6-SNAPSHOT</version>
+                <version>3.3.4</version>
                 <extensions>true</extensions>
                 <!-- Specify configuration, executions for liberty-maven-plugin -->
                 <configuration>
@@ -156,9 +156,7 @@
                         <version>${runtimeVersion}</version>
                         <type>zip</type>
                     </assemblyArtifact>
-                    <assemblyInstallDirectory>${project.build.directory}</assemblyInstallDirectory>
-                    <configFile>src/main/resources/server.xml</configFile>
-                    <packageFile>${project.build.directory}/LibertyProjectPackage.jar</packageFile>
+                    <serverXmlFile>src/main/resources/server.xml</serverXmlFile>
                     <bootstrapProperties>
                         <default.http.port>9080</default.http.port>
                         <default.https.port>9443</default.https.port>
@@ -233,32 +231,33 @@
             <id>managed-testng</id>
             <properties>
                 <test.to.include>**/TNG*</test.to.include>
-                <arquillian.dependency.artifact>arquillian-liberty-managed-testng</arquillian.dependency.artifact>
+                <arquillian.dependency.artifact>arquillian-liberty-managed-jakarta-testng</arquillian.dependency.artifact>
             </properties>
         </profile>
         <profile>
             <id>managed-junit</id>
             <properties>
                 <test.to.include>**/JUnit*</test.to.include>
-                <arquillian.dependency.artifact>arquillian-liberty-managed-junit</arquillian.dependency.artifact>
+                <arquillian.dependency.artifact>arquillian-liberty-managed-jakarta-junit</arquillian.dependency.artifact>
             </properties>
         </profile>
 
         <!-- WLP and OL profiles -->
-        <profile>
+        <!-- Commented out WL profile as there is not currently Jakarta EE 9 support for WL -->
+        <!-- <profile>
             <id>wlp</id>
             <properties>
                 <runtimeGroupId>com.ibm.websphere.appserver.runtime</runtimeGroupId>
                 <runtimeArtifactId>wlp-webProfile7</runtimeArtifactId>
                 <runtimeVersion>18.0.0.2</runtimeVersion>
             </properties>
-        </profile>
+        </profile> -->
         <profile>
             <id>ol</id>
             <properties>
-                <runtimeGroupId>io.openliberty</runtimeGroupId>
+                <runtimeGroupId>io.openliberty.beta</runtimeGroupId>
                 <runtimeArtifactId>openliberty-runtime</runtimeArtifactId>
-                <runtimeVersion>18.0.0.2</runtimeVersion>
+                <runtimeVersion>21.0.0.4-beta</runtimeVersion>
             </properties>
         </profile>
     </profiles>

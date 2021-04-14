@@ -1,16 +1,12 @@
 sudo: required
 language: java
 jdk:
-    - openjdk7
     - openjdk8
-    - oraclejdk9
+    - openjdk9
+    - oraclejdk11
 env:
     - TEST_COMMAND="cd gradle-tests; ./gradlew clean build -i -s"
     - TEST_COMMAND="mvn verify -Pit"
-matrix:
-    exclude:
-        - jdk: openjdk7
-          env: TEST_COMMAND="cd gradle-tests; ./gradlew clean build -i -s"
 script:
     - mvn clean install
     - (eval "$TEST_COMMAND")
