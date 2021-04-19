@@ -76,7 +76,6 @@ subprojects {
         testCompile group: "io.openliberty.arquillian", name: "arquillian-liberty-managed-junit", version: dependencyBundleVersion
         testCompile ('org.jboss.shrinkwrap:shrinkwrap-api')
         testCompile files("${System.properties['java.home']}/../lib/tools.jar")
-        testCompile group: 'javax.annotation', name: 'javax.annotation-api', version: '1.3.2'    
     }
 
     tasks.withType(Test) {
