@@ -9,9 +9,9 @@
     <packaging>war</packaging>
 
     <parent>
-        <groupId>net.wasdev.wlp.maven.parent</groupId>
+        <groupId>io.openliberty.tools</groupId>
         <artifactId>liberty-maven-app-parent</artifactId>
-        <version>2.5</version>
+        <version>3.3.4</version>
     </parent>
 
     <licenses>
@@ -46,8 +46,8 @@
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <maven.compiler.source>1.7</maven.compiler.source>
-        <maven.compiler.target>1.7</maven.compiler.target>
+        <maven.compiler.source>1.8</maven.compiler.source>
+        <maven.compiler.target>1.8</maven.compiler.target>
 
         <!-- Liberty server properties -->
         <wlpServerName>LibertyProjectServer</wlpServerName>
@@ -143,9 +143,9 @@
             </plugin>
 
             <plugin>
-                <groupId>net.wasdev.wlp.maven.plugins</groupId>
+                <groupId>io.openliberty.tools</groupId>
                 <artifactId>liberty-maven-plugin</artifactId>
-                <version>2.6-SNAPSHOT</version>
+                <version>3.3.4</version>
                 <extensions>true</extensions>
                 <!-- Specify configuration, executions for liberty-maven-plugin -->
                 <configuration>
@@ -156,9 +156,7 @@
                         <version>${runtimeVersion}</version>
                         <type>zip</type>
                     </assemblyArtifact>
-                    <assemblyInstallDirectory>${project.build.directory}</assemblyInstallDirectory>
-                    <configFile>src/main/resources/server.xml</configFile>
-                    <packageFile>${project.build.directory}/LibertyProjectPackage.jar</packageFile>
+                    <serverXmlFile>src/main/resources/server.xml</serverXmlFile>
                     <bootstrapProperties>
                         <default.http.port>9080</default.http.port>
                         <default.https.port>9443</default.https.port>
@@ -250,7 +248,7 @@
             <properties>
                 <runtimeGroupId>com.ibm.websphere.appserver.runtime</runtimeGroupId>
                 <runtimeArtifactId>wlp-webProfile7</runtimeArtifactId>
-                <runtimeVersion>18.0.0.2</runtimeVersion>
+                <runtimeVersion>21.0.0.3</runtimeVersion>
             </properties>
         </profile>
         <profile>
@@ -258,7 +256,7 @@
             <properties>
                 <runtimeGroupId>io.openliberty</runtimeGroupId>
                 <runtimeArtifactId>openliberty-runtime</runtimeArtifactId>
-                <runtimeVersion>18.0.0.2</runtimeVersion>
+                <runtimeVersion>21.0.0.3</runtimeVersion>
             </properties>
         </profile>
     </profiles>

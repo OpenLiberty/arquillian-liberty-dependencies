@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
-	<modelVersion>4.0.0</modelVersion>
-	<groupId>io.openliberty.arquillian</groupId>
-	<artifactId>arquillian-liberty-dependencies</artifactId>
-	<version>1.1.7-SNAPSHOT</version>
-	<packaging>pom</packaging>
-	<name>Arquillian Liberty Dependency Bundles</name>
-
 	<parent>
 		<groupId>net.wasdev.maven.parent</groupId>
 		<artifactId>parent</artifactId>
 		<version>1.4</version>
 		<relativePath />
 	</parent>
+
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>io.openliberty.arquillian</groupId>
+	<artifactId>arquillian-liberty-dependencies</artifactId>
+	<version>1.1.7-SNAPSHOT</version>
+	<packaging>pom</packaging>
+	<name>Arquillian Liberty Dependency Bundles</name>
 
 	<licenses>
 		<license>
@@ -120,7 +120,7 @@
 							</properties>
 							<cloneProjectsTo>${project.build.directory}/it</cloneProjectsTo>
 							<profiles>
-								<profile>it</profile>
+								<profile>ol</profile>
 							</profiles>
 							<streamLogs>true</streamLogs>
 						</configuration>
