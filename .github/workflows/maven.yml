@@ -1,0 +1,36 @@
+# This workflow will build a Java project with Maven
+# For more information see: https://help.github.com/actions/language-and-framework-guides/building-and-testing-java-with-maven
+
+name: Java CI with Maven
+
+on:
+  push:
+    branches: [ 1.x-maintenance ]
+  pull_request:
+    branches: [ 1.x-maintenance ]
+
+jobs:
+  build:
+
+    runs-on: ${{ matrix.os }}
+    strategy:
+      fail-fast: false
+      max-parallel: 5
+      matrix:
+        os: [ubuntu-latest, windows-latest]
+        java: [8, 9]
+
+    steps:
+    - uses: actions/checkout@v2
+    - name: Set up JDK
+      uses: actions/setup-java@v1
+      with:
+        java-version: ${{ matrix.java }}
+    - name: Build with Maven
+      run: |
+        mvn clean install
+        mvn verify -Pit -U
+    - name: Run Gradle tests
+      run: |
+        cd gradle-tests
+        ./gradlew clean build -i -s
