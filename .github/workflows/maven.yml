@@ -30,3 +30,7 @@ jobs:
       run: |
         mvn clean install
         mvn verify -Pit -U
+    - name: Run Gradle tests
+      run: |
+        cd gradle-tests
+        ./gradlew clean build -i -s
