@@ -49,6 +49,9 @@
 			<snapshots>
 				<enabled>true</enabled>
 			</snapshots>
+			<releases>
+				<enabled>false</enabled>
+			</releases>
 		</repository>
 	</repositories>
 
@@ -59,11 +62,11 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 
 		<liberty.arquillian.groupId>io.openliberty.arquillian</liberty.arquillian.groupId>
-		<liberty.arquillian.version>1.0.7</liberty.arquillian.version>
+		<liberty.arquillian.version>1.0.8-SNAPSHOT</liberty.arquillian.version>
 		<liberty.managed.artifactId>arquillian-liberty-managed</liberty.managed.artifactId>
 		<liberty.remote.artifactId>arquillian-liberty-remote</liberty.remote.artifactId>
 
-		<junit.version>4.12</junit.version>
+		<junit.version>4.13.1</junit.version>
 		<testng.version>6.13.1</testng.version>
 	</properties>
 
