@@ -59,7 +59,7 @@
 		<maven.compiler.target>1.7</maven.compiler.target>
 
 		<liberty.arquillian.groupId>io.openliberty.arquillian</liberty.arquillian.groupId>
-		<liberty.arquillian.version>2.0.0</liberty.arquillian.version>
+		<liberty.arquillian.version>2.0.1</liberty.arquillian.version>
 		<liberty.managed.artifactId>arquillian-liberty-managed-jakarta</liberty.managed.artifactId>
 		<liberty.remote.artifactId>arquillian-liberty-remote-jakarta</liberty.remote.artifactId>
 
