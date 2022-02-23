@@ -10,7 +10,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>io.openliberty.arquillian</groupId>
 	<artifactId>arquillian-liberty-jakarta-dependencies</artifactId>
-	<version>2.0.3-SNAPSHOT</version>
+	<version>2.0.3</version>
 	<packaging>pom</packaging>
 	<name>Arquillian Liberty Jakarta Dependency Bundles</name>
 
@@ -26,7 +26,7 @@
 		<connection>scm:git:git@github.com:OpenLiberty/arquillian-liberty-dependencies.git</connection>
 		<developerConnection>scm:git:git@github.com:OpenLiberty/arquillian-liberty-dependencies.git</developerConnection>
 		<url>git@github.com:OpenLiberty/arquillian-liberty-dependencies.git</url>
-		<tag>HEAD</tag>
+		<tag>arquillian-liberty-jakarta-dependencies-2.0.3</tag>
 	</scm>
 
 	<dependencyManagement>
