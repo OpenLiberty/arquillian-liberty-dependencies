@@ -62,7 +62,7 @@
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
-                <version>1.7.0.Alpha10</version>
+                <version>1.7.0.Alpha12</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -243,21 +243,20 @@
         </profile>
 
         <!-- WLP and OL profiles -->
-        <!-- Commented out WL profile as there is not currently Jakarta EE 9 support for WL -->
-        <!-- <profile>
+        <profile>
             <id>wlp</id>
             <properties>
                 <runtimeGroupId>com.ibm.websphere.appserver.runtime</runtimeGroupId>
-                <runtimeArtifactId>wlp-webProfile7</runtimeArtifactId>
-                <runtimeVersion>18.0.0.2</runtimeVersion>
+                <runtimeArtifactId>wlp-webProfile9</runtimeArtifactId>
+                <runtimeVersion>22.0.0.8</runtimeVersion>
             </properties>
-        </profile> -->
+        </profile>
         <profile>
             <id>ol</id>
             <properties>
-                <runtimeGroupId>io.openliberty.beta</runtimeGroupId>
+                <runtimeGroupId>io.openliberty</runtimeGroupId>
                 <runtimeArtifactId>openliberty-runtime</runtimeArtifactId>
-                <runtimeVersion>21.0.0.4-beta</runtimeVersion>
+                <runtimeVersion>22.0.0.8</runtimeVersion>
             </properties>
         </profile>
     </profiles>

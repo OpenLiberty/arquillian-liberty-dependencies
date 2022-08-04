@@ -33,7 +33,7 @@ In order to prevent dependency conflicts, you'll need to use the `arquillian-bom
 		<dependency>
 			<groupId>org.jboss.arquillian</groupId>
 			<artifactId>arquillian-bom</artifactId>
-			<version>1.7.0.Alpha9</version>
+			<version>1.7.0.Alpha12</version>
 			<scope>import</scope>
 			<type>pom</type>
 		</dependency>
@@ -45,7 +45,7 @@ In order to prevent dependency conflicts, you'll need to use the `arquillian-bom
 	<dependency>
 		<groupId>io.openliberty.arquillian</groupId>
 		<artifactId>arquillian-liberty-managed-jakarta-junit</artifactId>
-		<version>2.0.0</version>
+		<version>2.1.0</version>
 		<type>pom</type>
 		<scope>test</scope>
 	</dependency>
@@ -117,11 +117,11 @@ Step 3: Add a `dependencyManagement` block that contains the `arquillian-bom`:
 ```
 dependencyManagement {
     imports {
-        mavenBom "org.jboss.arquillian:arquillian-bom:1.7.0.Alpha9"
+        mavenBom "org.jboss.arquillian:arquillian-bom:1.7.0.Alpha12"
     }
 }
 ```
 
 You can use the command `gradle dependencies` to view transitive dependencies and their versions. 
 
-The previous example uses version `1.7.0.Alpha9` of the `arquillian-bom` for Jakarta EE 9 projects. If using Java EE 8 or below, use version `1.1.13.Final` of the `arquillian-bom`. A full Gradle example with Jakarta EE 9 is available in the `gradle-tests` folder.
+The previous example uses version `1.7.0.Alpha12` of the `arquillian-bom` for Jakarta EE 9 projects. If using Java EE 8 or below, use version `1.1.13.Final` of the `arquillian-bom`. A full Gradle example with Jakarta EE 9 is available in the `gradle-tests` folder.
