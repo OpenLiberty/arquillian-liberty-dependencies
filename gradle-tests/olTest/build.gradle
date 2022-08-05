@@ -1,3 +1,3 @@
 dependencies {
-    libertyRuntime group: 'io.openliberty.beta', name: 'openliberty-runtime', version: '21.0.0.4-beta'
+    libertyRuntime group: 'io.openliberty', name: 'openliberty-runtime', version: '22.0.0.8'
 }
