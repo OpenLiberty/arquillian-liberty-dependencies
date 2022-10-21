@@ -11,7 +11,7 @@
     <parent>
         <groupId>io.openliberty.tools</groupId>
         <artifactId>liberty-maven-app-parent</artifactId>
-        <version>3.3.4</version>
+        <version>3.7.1</version>
     </parent>
 
     <licenses>
@@ -93,7 +93,7 @@
         <plugins>
             <plugin>
                 <artifactId>maven-failsafe-plugin</artifactId>
-                <version>2.22.0</version>
+                <version>3.0.0-M7</version>
                 <executions>
                     <execution>
                         <id>default-integration-test</id>
@@ -115,7 +115,7 @@
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-war-plugin</artifactId>
-                <version>3.1.0</version>
+                <version>3.3.2</version>
                 <configuration>
                     <packagingExcludes>pom.xml</packagingExcludes>
                     <failOnMissingWebXml>false</failOnMissingWebXml>
@@ -145,7 +145,7 @@
             <plugin>
                 <groupId>io.openliberty.tools</groupId>
                 <artifactId>liberty-maven-plugin</artifactId>
-                <version>3.3.4</version>
+                <version>3.7.1</version>
                 <extensions>true</extensions>
                 <!-- Specify configuration, executions for liberty-maven-plugin -->
                 <configuration>
@@ -248,7 +248,7 @@
             <properties>
                 <runtimeGroupId>com.ibm.websphere.appserver.runtime</runtimeGroupId>
                 <runtimeArtifactId>wlp-webProfile9</runtimeArtifactId>
-                <runtimeVersion>22.0.0.8</runtimeVersion>
+                <runtimeVersion>22.0.0.9</runtimeVersion>
             </properties>
         </profile>
         <profile>
@@ -256,7 +256,7 @@
             <properties>
                 <runtimeGroupId>io.openliberty</runtimeGroupId>
                 <runtimeArtifactId>openliberty-runtime</runtimeArtifactId>
-                <runtimeVersion>22.0.0.8</runtimeVersion>
+                <runtimeVersion>22.0.0.9</runtimeVersion>
             </properties>
         </profile>
     </profiles>
