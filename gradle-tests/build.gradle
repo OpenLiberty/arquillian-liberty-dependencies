@@ -4,7 +4,7 @@ buildscript {
         mavenCentral()
     }
     dependencies {
-        classpath group: 'io.openliberty.tools', name: 'liberty-gradle-plugin', version: '3.1.2'
+        classpath group: 'io.openliberty.tools', name: 'liberty-gradle-plugin', version: '3.5.1'
         classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
     }
 }
@@ -23,7 +23,7 @@ subprojects {
             mavenCentral()
         }
         dependencies {
-            classpath group: 'io.openliberty.tools', name: 'liberty-gradle-plugin', version: '3.1.2'
+            classpath group: 'io.openliberty.tools', name: 'liberty-gradle-plugin', version: '3.5.1'
             classpath "io.spring.gradle:dependency-management-plugin:1.0.4.RELEASE"
         }
     }
@@ -71,11 +71,11 @@ subprojects {
     }
 
     dependencies {
-        compile ('jakarta.enterprise:jakarta.enterprise.cdi-api:3.0.0')
+        implementation ('jakarta.enterprise:jakarta.enterprise.cdi-api:3.0.0')
        
-        testCompile group: "io.openliberty.arquillian", name: "arquillian-liberty-managed-jakarta-junit", version: dependencyBundleVersion
-        testCompile ('org.jboss.shrinkwrap:shrinkwrap-api')
-        testCompile files("${System.properties['java.home']}/../lib/tools.jar")
+        testImplementation group: "io.openliberty.arquillian", name: "arquillian-liberty-managed-jakarta-junit", version: dependencyBundleVersion
+        testImplementation ('org.jboss.shrinkwrap:shrinkwrap-api')
+        testImplementation files("${System.properties['java.home']}/../lib/tools.jar")
     }
 
     tasks.withType(Test) {
