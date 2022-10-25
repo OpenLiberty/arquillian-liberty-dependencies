@@ -237,8 +237,15 @@
         <profile>
             <id>managed-junit</id>
             <properties>
-                <test.to.include>**/JUnit*</test.to.include>
+                <test.to.include>**/JUnit4*</test.to.include>
                 <arquillian.dependency.artifact>arquillian-liberty-managed-jakarta-junit</arquillian.dependency.artifact>
+            </properties>
+        </profile>
+        <profile>
+            <id>managed-junit5</id>
+            <properties>
+                <test.to.include>**/JUnit5*</test.to.include>
+                <arquillian.dependency.artifact>arquillian-liberty-managed-jakarta-junit5</arquillian.dependency.artifact>
             </properties>
         </profile>
 

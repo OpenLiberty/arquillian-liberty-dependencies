@@ -64,13 +64,16 @@
 		<liberty.remote.artifactId>arquillian-liberty-remote-jakarta</liberty.remote.artifactId>
 
 		<junit.version>4.13.2</junit.version>
+		<junit5.version>5.9.0</junit5.version>
 		<testng.version>6.13.1</testng.version>
 	</properties>
 
 	<modules>
 		<module>arquillian-liberty-managed-junit</module>
+		<module>arquillian-liberty-managed-junit5</module>
 		<module>arquillian-liberty-managed-testng</module>
 		<module>arquillian-liberty-remote-junit</module>
+		<module>arquillian-liberty-remote-junit5</module>
 		<module>arquillian-liberty-remote-testng</module>
 	</modules>
 
