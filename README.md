@@ -4,11 +4,13 @@ The Liberty dependency bundles for Arquillian make it easy for you to manage ver
 
 ## Dependencies
 
-In this repository, you'll find 4 artifacts that you can use in your Maven and Gradle projects with Jakarta EE 9. They are:
+In this repository, you'll find 6 artifacts that you can use in your Maven and Gradle projects with Jakarta EE 9. They are:
 
 - `io.openliberty.arquillian:arquillian-liberty-managed-jakarta-junit` for using the Arquillian Liberty Managed container with JUnit
+- `io.openliberty.arquillian:arquillian-liberty-managed-jakarta-junit5` for using the Arquillian Liberty Managed container with JUnit5
 - `io.openliberty.arquillian:arquillian-liberty-managed-jakarta-testng` for using the Arquillian Liberty Managed container with TestNG
 - `io.openliberty.arquillian:arquillian-liberty-remote-jakarta-junit` for using the Arquillian Liberty Remote container with JUnit
+- `io.openliberty.arquillian:arquillian-liberty-remote-jakarta-junit5` for using the Arquillian Liberty Remote container with JUnit5
 - `io.openliberty.arquillian:arquillian-liberty-remote-jakarta-testng` for using the Arquillian Liberty Remote container with TestNG
 
 For Java EE 8 or below, the following 4 artifacts are available:

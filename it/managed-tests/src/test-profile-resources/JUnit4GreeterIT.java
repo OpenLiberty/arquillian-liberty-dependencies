@@ -35,7 +35,7 @@ import org.junit.runner.RunWith;
  * @author <a href="http://community.jboss.org/people/dan.j.allen">Dan Allen</a>
  */
 @RunWith(Arquillian.class)
-public class JUnitGreeterIT {
+public class JUnit4GreeterIT {
 
     @Deployment
     public static WebArchive createDeployment() {
