@@ -66,7 +66,7 @@ subprojects {
 
     dependencyManagement {
         imports {
-            mavenBom "org.jboss.arquillian:arquillian-bom:1.7.0.Alpha13"
+            mavenBom "org.jboss.arquillian:arquillian-bom:1.7.0.Alpha14"
         }
     }
 
