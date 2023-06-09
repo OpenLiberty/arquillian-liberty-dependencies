@@ -11,7 +11,7 @@
     <parent>
         <groupId>io.openliberty.tools</groupId>
         <artifactId>liberty-maven-app-parent</artifactId>
-        <version>3.7.1</version>
+        <version>3.8.1</version>
     </parent>
 
     <licenses>
@@ -62,7 +62,7 @@
             <dependency>
                 <groupId>org.jboss.arquillian</groupId>
                 <artifactId>arquillian-bom</artifactId>
-                <version>1.7.0.Alpha14</version>
+                <version>1.7.0.Final</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -145,7 +145,7 @@
             <plugin>
                 <groupId>io.openliberty.tools</groupId>
                 <artifactId>liberty-maven-plugin</artifactId>
-                <version>3.7.1</version>
+                <version>3.8.1</version>
                 <extensions>true</extensions>
                 <!-- Specify configuration, executions for liberty-maven-plugin -->
                 <configuration>
@@ -255,7 +255,7 @@
             <properties>
                 <runtimeGroupId>com.ibm.websphere.appserver.runtime</runtimeGroupId>
                 <runtimeArtifactId>wlp-webProfile9</runtimeArtifactId>
-                <runtimeVersion>22.0.0.9</runtimeVersion>
+                <runtimeVersion>23.0.0.2</runtimeVersion>
             </properties>
         </profile>
         <profile>
@@ -263,7 +263,7 @@
             <properties>
                 <runtimeGroupId>io.openliberty</runtimeGroupId>
                 <runtimeArtifactId>openliberty-runtime</runtimeArtifactId>
-                <runtimeVersion>22.0.0.9</runtimeVersion>
+                <runtimeVersion>23.0.0.3</runtimeVersion>
             </properties>
         </profile>
     </profiles>
