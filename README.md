@@ -35,7 +35,14 @@ In order to prevent dependency conflicts, you'll need to use the `arquillian-bom
 		<dependency>
 			<groupId>org.jboss.arquillian</groupId>
 			<artifactId>arquillian-bom</artifactId>
-			<version>1.7.0.Final</version>
+			<version>1.9.1.Final</version>
+			<scope>import</scope>
+			<type>pom</type>
+		</dependency>
+		<dependency>
+			<groupId>org.jboss.arquillian.jakarta</groupId>
+			<artifactId>arquillian-jakarta-bom</artifactId>
+			<version>10.0.0.Final</version>
 			<scope>import</scope>
 			<type>pom</type>
 		</dependency>
@@ -47,7 +54,7 @@ In order to prevent dependency conflicts, you'll need to use the `arquillian-bom
 	<dependency>
 		<groupId>io.openliberty.arquillian</groupId>
 		<artifactId>arquillian-liberty-managed-jakarta-junit</artifactId>
-		<version>2.1.4</version>
+		<version>3.0.0</version>
 		<type>pom</type>
 		<scope>test</scope>
 	</dependency>
@@ -114,12 +121,13 @@ Step 2: Apply the plugin:
 apply plugin: "io.spring.dependency-management"
 ```
 
-Step 3: Add a `dependencyManagement` block that contains the `arquillian-bom`:
+Step 3: Add a `dependencyManagement` block that contains the `arquillian-bom` and `arquillian-jakarta-bom`:
 
 ```
 dependencyManagement {
     imports {
-        mavenBom "org.jboss.arquillian:arquillian-bom:1.7.0.Final"
+        mavenBom "org.jboss.arquillian:arquillian-bom:1.9.1.Final"
+        mavenBom "org.jboss.arquillian.jakarta:arquillian-jakarta-bom:10.0.0.Final"
     }
 }
 ```

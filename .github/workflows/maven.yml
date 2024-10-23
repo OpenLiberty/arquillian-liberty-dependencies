@@ -18,14 +18,14 @@ jobs:
       max-parallel: 5
       matrix:
         os: [ubuntu-latest, windows-latest]
-        java: [8, 11, 17]
+        java: [11, 17, 21]
 
     steps:
     - uses: actions/checkout@v3
     - name: Set up Maven
       uses: stCarolas/setup-maven@v4.2
       with:
-        maven-version: 3.8.1
+        maven-version: 3.9.2
     - name: Set up JDK
       uses: actions/setup-java@v3
       with:
