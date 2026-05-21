@@ -95,7 +95,7 @@
 		<maven.compiler.target>11</maven.compiler.target>
 
 		<liberty.arquillian.groupId>io.openliberty.arquillian</liberty.arquillian.groupId>
-		<liberty.arquillian.version>3.0.0-SNAPSHOT</liberty.arquillian.version>
+		<liberty.arquillian.version>3.0.0</liberty.arquillian.version>
 		<liberty.managed.artifactId>arquillian-liberty-managed-jakarta</liberty.managed.artifactId>
 		<liberty.remote.artifactId>arquillian-liberty-remote-jakarta</liberty.remote.artifactId>
 

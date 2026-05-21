@@ -283,7 +283,7 @@
             <properties>
                 <runtimeGroupId>io.openliberty</runtimeGroupId>
                 <runtimeArtifactId>openliberty-runtime</runtimeArtifactId>
-                <runtimeVersion>25.0.0.9</runtimeVersion>
+                <runtimeVersion>26.0.0.5</runtimeVersion>
             </properties>
         </profile>
     </profiles>
