@@ -4,7 +4,7 @@ The Liberty dependency bundles for Arquillian make it easy for you to manage ver
 
 ## Dependencies
 
-In this repository, you'll find 6 artifacts that you can use in your Maven and Gradle projects with Jakarta EE 9 and 10. They are:
+In this repository, you'll find 6 artifacts that you can use in your Maven and Gradle projects with Jakarta EE 9, 10 and 11. They are:
 
 - `io.openliberty.arquillian:arquillian-liberty-managed-jakarta-junit` for using the Arquillian Liberty Managed container with JUnit
 - `io.openliberty.arquillian:arquillian-liberty-managed-jakarta-junit5` for using the Arquillian Liberty Managed container with JUnit5
@@ -28,7 +28,7 @@ For Java EE 8 or below, the following 4 artifacts are available:
 
 In order to prevent dependency conflicts, you'll need to use the `arquillian-bom` in conjunction with a dependency bundle. While the `arquillian-liberty-dependencies` parent POM already contains the `arquillian-bom`, this is used only to build the dependency bundle artifacts and will not be applied to your project when you include them. The version of the `arquillian-bom` that you specify will apply to transitive dependencies of your project. 
 
-**Jakarta EE 9 and 10 example:**
+**Jakarta EE 9, 10 and 11 example:**
 ```
 <dependencyManagement>
 	<dependencies>
@@ -134,4 +134,4 @@ dependencyManagement {
 
 You can use the command `gradle dependencies` to view transitive dependencies and their versions. 
 
-The previous example uses version `1.7.0.Final` of the `arquillian-bom` for Jakarta EE 9 and 10 projects. If using Java EE 8 or below, use version `1.1.13.Final` of the `arquillian-bom`. A full Gradle example with Jakarta EE 9 is available in the `gradle-tests` folder.
+The previous example uses version `1.9.1.Final` of the `arquillian-bom` for Jakarta EE 9, 10 and 11 projects. If using Java EE 8 or below, use version `1.1.13.Final` of the `arquillian-bom`. A full Gradle example with Jakarta EE 9 is available in the `gradle-tests` folder.
