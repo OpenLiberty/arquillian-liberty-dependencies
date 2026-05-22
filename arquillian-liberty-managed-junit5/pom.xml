@@ -9,6 +9,8 @@
 	</parent>
 	<artifactId>arquillian-liberty-managed-jakarta-junit5</artifactId>
 	<packaging>pom</packaging>
+	<name>Arquillian Liberty Managed Jakarta Junit5</name>
+    <description>Arquillian Liberty Managed container for Jakarta with JUnit5</description>
 
 	<dependencies>
 		<dependency>
