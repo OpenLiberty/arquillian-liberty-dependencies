@@ -9,6 +9,8 @@
 	</parent>
 	<artifactId>arquillian-liberty-remote-jakarta-testng</artifactId>
 	<packaging>pom</packaging>
+	<name>Arquillian Liberty Remote Jakarta Testng</name>
+    <description>Arquillian Liberty Remote container for Jakarta with Testng</description>
 
 	<dependencies>
 		<dependency>
