@@ -1,3 +1,15 @@
 dependencies {
-    libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-webProfile7', version: '21.0.0.3'
+    libertyRuntime group: 'com.ibm.websphere.appserver.runtime', name: 'wlp-webProfile7', version: '26.0.0.9'
+}
+compileJava {
+    dependsOn ':olTest:compileJava'
+}
+compileTestJava {
+    dependsOn ':olTest:compileTestJava', ':olTest:processResources'
+}
+war {
+    dependsOn ':olTest:compileJava', ':olTest:compileTestJava', ':olTest:processResources'
+}
+test {
+    dependsOn ':olTest:processTestResources'
 }

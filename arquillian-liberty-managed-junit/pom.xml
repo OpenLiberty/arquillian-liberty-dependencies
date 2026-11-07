@@ -9,6 +9,8 @@
 	</parent>
 	<artifactId>arquillian-liberty-managed-junit</artifactId>
 	<packaging>pom</packaging>
+	<name>Arquillian Liberty Managed Junit</name>
+    <description>Arquillian Liberty Managed container with JUnit</description>
 
 	<dependencies>
 		<dependency>

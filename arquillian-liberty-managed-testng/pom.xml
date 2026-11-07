@@ -9,6 +9,8 @@
 	</parent>
 	<artifactId>arquillian-liberty-managed-testng</artifactId>
 	<packaging>pom</packaging>
+	<name>Arquillian Liberty Managed Testng</name>
+    <description>Arquillian Liberty Managed container with Testng</description>
 
 	<dependencies>
 		<dependency>

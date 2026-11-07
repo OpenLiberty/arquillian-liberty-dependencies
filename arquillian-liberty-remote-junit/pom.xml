@@ -9,6 +9,8 @@
 	</parent>
 	<artifactId>arquillian-liberty-remote-junit</artifactId>
 	<packaging>pom</packaging>
+	<name>Arquillian Liberty Remote Junit</name>
+    <description>Arquillian Liberty Remote container with JUnit</description>
 
 	<dependencies>
 		<dependency>
