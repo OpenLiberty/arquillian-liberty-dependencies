@@ -9,6 +9,8 @@
 	</parent>
 	<artifactId>arquillian-liberty-remote-testng</artifactId>
 	<packaging>pom</packaging>
+	<name>Arquillian Liberty Remote Testng</name>
+    <description>Arquillian Liberty Remote container with Testng</description>
 
 	<dependencies>
 		<dependency>

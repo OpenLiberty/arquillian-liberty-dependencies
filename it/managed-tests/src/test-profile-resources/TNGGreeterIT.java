@@ -1,5 +1,5 @@
 /**
- * (C) Copyright IBM Corporation 2017, 2018.
+ * (C) Copyright IBM Corporation 2017, 2026.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -24,6 +24,7 @@ import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.testng.Arquillian;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
+import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.testng.Assert;
 import org.testng.Reporter;
 import org.testng.annotations.Test;
@@ -32,7 +33,8 @@ public class TNGGreeterIT extends Arquillian {
 
 	@Deployment
     public static WebArchive createDeployment() {
-        WebArchive archive = ShrinkWrap.create(WebArchive.class).addClasses(Greeter.class, PhraseBuilder.class);
+        File[] files = Maven.resolver().resolve("org.testng:testng:6.13.1").withTransitivity().asFile();
+        WebArchive archive = ShrinkWrap.create(WebArchive.class).addAsLibraries(files).addClasses(Greeter.class, PhraseBuilder.class);
         System.out.println(archive.toString());
         return archive;
     }
